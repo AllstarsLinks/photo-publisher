@@ -1,0 +1,10 @@
+[package]
+name = "photo-publisher-contract-validator"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow = "1"
+jsonschema = "0.29"
+serde_json = "1"
