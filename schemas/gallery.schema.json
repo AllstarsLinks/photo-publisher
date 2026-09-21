@@ -5,11 +5,7 @@
   "description": "Published photo manifest consumed by compatible gallery templates.",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "schemaVersion",
-    "gallery",
-    "photos"
-  ],
+  "required": ["schemaVersion", "gallery", "photos"],
   "properties": {
     "schemaVersion": {
       "type": "integer",
@@ -18,10 +14,7 @@
     "gallery": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "id",
-        "title"
-      ],
+      "required": ["id", "title"],
       "properties": {
         "id": {
           "type": "string",
@@ -44,9 +37,7 @@
     },
     "photos": {
       "type": "array",
-      "items": {
-        "$ref": "#/$defs/photo"
-      },
+      "items": { "$ref": "#/$defs/photo" },
       "uniqueItems": true
     }
   },
@@ -54,11 +45,7 @@
     "asset": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "url",
-        "width",
-        "height"
-      ],
+      "required": ["url", "width", "height"],
       "properties": {
         "url": {
           "type": "string",
@@ -78,20 +65,14 @@
         },
         "mimeType": {
           "type": "string",
-          "enum": [
-            "image/jpeg"
-          ]
+          "enum": ["image/jpeg"]
         }
       }
     },
     "photo": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "id",
-        "filename",
-        "preview"
-      ],
+      "required": ["id", "filename", "preview"],
       "properties": {
         "id": {
           "type": "string",
@@ -105,7 +86,7 @@
         },
         "sequence": {
           "type": "integer",
-          "minimum": 0
+          "minimum": 1
         },
         "preview": {
           "$ref": "#/$defs/asset"

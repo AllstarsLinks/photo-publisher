@@ -1,25 +1,30 @@
-# Phase 1 — Contract Layer
+# Photo Publisher — Phase 1.1
 
-## Definition of done
+Phase 1.1 hardens the public contract layer established in Phase 1.
 
-- [x] Project schema v1 present
-- [x] Gallery schema v1 present
-- [x] Draft 2020-12 validation
-- [x] Valid fixtures
-- [x] Invalid fixtures
-- [x] Automated Rust tests
-- [x] Minimal developer documentation
+## Changes
 
-## Test matrix
+- Require `source.type` whenever `source` is present.
+- Require `domain.url` whenever `domain` is present.
+- Standardize gallery `sequence` as one-based (`minimum: 1`).
+- Reject duplicate photo IDs in the gallery validator.
+- Add regression fixtures and tests for all of the above.
+- Add GitHub Actions CI to run the Rust test suite on pushes to `main` and pull requests.
 
-| Case | Expected |
-|---|---|
-| Valid project | pass |
-| Valid gallery | pass |
-| Invalid project ID | fail |
-| Gallery preview width = 0 | fail |
-| Unexpected gallery property | fail |
+## Scope
 
-## Next phase
+- JSON Schema Draft 2020-12 contracts
+- Project contract v1
+- Gallery manifest contract v1
+- Rust validator
+- Valid/invalid fixtures
+- Automated tests
+- GitHub Actions CI
 
-Phase 2 should implement the provider-agnostic Publisher Core only after the contract layer is reviewed and accepted.
+## Out of scope
+
+GUI, GitHub/Vercel/R2 providers, Lightroom integration, AI adapters, publishing engine, and cloud provisioning remain out of scope for this phase.
+
+## Contract note
+
+The repository is still pre-1.0. The refinements in Phase 1.1 are intentionally applied before the contracts are treated as a stable public release. Future breaking contract changes after stabilization must use a new major contract version.

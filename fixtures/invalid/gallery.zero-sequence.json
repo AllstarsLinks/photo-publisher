@@ -8,12 +8,12 @@
     {
       "id": "photo-000001",
       "filename": "IMG_0001.jpg",
+      "sequence": 0,
       "preview": {
         "url": "/photos/preview/IMG_0001.jpg",
         "width": 2048,
         "height": 1365
-      },
-      "unexpected": true
+      }
     }
   ]
 }

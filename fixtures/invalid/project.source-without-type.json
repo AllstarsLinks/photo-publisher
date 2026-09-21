@@ -1,12 +1,15 @@
 {
   "schemaVersion": 1,
   "project": {
-    "id": "Joao Maria 2026",
+    "id": "joao-maria-2026",
     "name": "João & Maria"
   },
   "gallery": {
     "template": "editorial-v1",
     "title": "João & Maria"
+  },
+  "source": {
+    "path": "D:\\Fotos\\JoaoMaria\\Final"
   },
   "repository": {
     "provider": "github",

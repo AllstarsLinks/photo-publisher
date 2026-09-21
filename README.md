@@ -1,19 +1,16 @@
-# Photo Publisher — Phase 1
+# Photo Publisher — Phase 1.1
 
-Phase 1 establishes the public contract layer for the Photo Publisher project.
+Phase 1.1 establishes and hardens the public contract layer for the Photo Publisher project.
 
-## Scope
+## Contents
 
 - JSON Schema Draft 2020-12 contracts
 - Project contract v1
 - Gallery manifest contract v1
-- Rust validator
-- Valid/invalid fixtures
+- Rust contract validator
+- Valid and invalid fixtures
 - Automated tests
-
-## Explicitly out of scope
-
-No GUI, GitHub, Vercel, R2/S3, Lightroom integration, AI adapter, or publishing engine is implemented in this phase.
+- GitHub Actions CI
 
 ## Validate locally
 
@@ -24,7 +21,7 @@ Requirements:
 Run:
 
 ```bash
-cargo test
+cargo test --workspace --all-targets
 ```
 
 Validate an individual document:
@@ -33,6 +30,8 @@ Validate an individual document:
 cargo run -p photo-publisher-contract-validator -- schemas/project.schema.json fixtures/valid/project.valid.json
 ```
 
-## Contract rule
+## Contract rules
 
-The schemas are public interfaces. Breaking changes require a new major schema version. Keep provider credentials and secrets out of `project.json`.
+The schemas are public interfaces. The project contract contains no credentials or secrets. Gallery photo IDs must be unique, and gallery sequence numbers are one-based.
+
+Breaking changes after contract stabilization require a new major contract version.
